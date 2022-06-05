@@ -21,9 +21,9 @@ if (!isset($_SESSION["userName"])) {
 
 
 
-<a href="./form.php" style="margin-left:360px;" >ajouter</a>
+<button  type="button" class="btn btn-dark" style="margin-left:360px; margin-top:30px;" ><a href="./form.php" style="text-decoration: none;">ajouter</a></button>
 
-<a href="http://localhost:8080/produits/logout" style="margin-left:500px;" >logout</a>
+<button type="button" class="btn btn-dark" style="margin-left:500px; margin-top:30px;" ><a href="http://localhost:8080/produits/logout" style="text-decoration: none;">logout</a></button>
 
 
 <h1 style="text-align: center;color:red;">Bienvenue</h1>
@@ -49,10 +49,10 @@ if (!isset($_SESSION["userName"])) {
             else 
             echo "<img style='height:40px; width:40px;' src = 'imgs/default.jpg'>" . "<br>";
             ?></td>
-            <td><a onclick="return confirm('Etes-vous sûr ?')"
+            <td><button type="button" class="btn btn-danger"><a onclick="return confirm('Etes-vous sûr ?')"
 
-            href="http://localhost:8080/produits/deleteProduit?id=<?php echo $mydata['idProduit']?>">Supprimer</a></td>
-            <td><a href="http://localhost:8080/produits/edit/id/<?php echo $mydata['idProduit']?>">Edit</a></td>
+            href="http://localhost:8080/produits/deleteProduit?id=<?php echo $mydata['idProduit']?>" style="text-decoration:none; color:black">Supprimer</a></button></td>
+            <td><button type="button" class="btn btn-warning"><a href="http://localhost:8080/produits/edit/id/<?php echo $mydata['idProduit']?>" style="text-decoration:none; color:black">Edit</a></button></td>
         </tr>
       <?php } ?>
 </table>

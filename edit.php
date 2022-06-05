@@ -11,6 +11,15 @@ if (!isset($_SESSION["userName"])) {
 <head>
     <meta charset="UTF-8">
     <title>editer un Produit</title>
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
 <body><br>
@@ -26,7 +35,7 @@ if (!isset($_SESSION["userName"])) {
     ?>
 
     <fieldset style="width: 500px;margin:auto">
-        <legend>Creer un Produit</legend>
+        <legend style="margin-left: 100px; color:#6ca7f3">modifier un Produit</legend>
         <form enctype="multipart/form-data" action="" method="POST">
             <pre>
 
@@ -38,9 +47,11 @@ if (!isset($_SESSION["userName"])) {
 
            DATE DE CREATION <input type="date" name="date" id="date" value="<?php echo $date ?>">
 
-           Select Image File to add: <input type="file" name="image">
+           image: <input type="file" name="image">
 
-            <input type="submit"  value="editer">
+           <div class="form-group">
+                <input type="submit" value="editer" class="btn" style="background-color: #6ca7f3;">
+            </div>
         </pre>
         </form>
     </fieldset>
@@ -61,8 +72,8 @@ if (!isset($_SESSION["userName"])) {
 
         <form action="http://localhost:8080/produits/update" method="POST">
 
-            
-            <input type="text" hidden name="idProduit" value="<?php echo $_POST['idProduit'] ?>"/>
+
+            <input type="text" hidden name="idProduit" value="<?php echo $_POST['idProduit'] ?>" />
 
             <input type="text" hidden name="nomProduit" id="nom" value="<?php echo $_POST['nomProduit'] ?>" />
 
@@ -70,9 +81,11 @@ if (!isset($_SESSION["userName"])) {
 
             <input type="date" hidden name="date" id="date" value="<?php echo $_POST['date'] ?>">
 
-            <input type="text" hidden name="image" id="img" value="<?php echo $file_name?>">
+            <input type="text" hidden name="image" id="img" value="<?php echo $file_name ?>">
 
-            <input type="submit" value="liste des produits">
+            <div class="form-group" style="margin-top: 60px;">
+                <input type="submit" value="Listes des produits" class="btn" style="background-color: green;">
+            </div>
 
         </form>
 
